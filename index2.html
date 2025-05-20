@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <title>THE PROMISE LAND STATIONARY</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('IMG_20250120_084806_509.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .menu button {
+            background-color: red;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .menu button:hover {
+            background-color: darkred;
+            color: white;
+        }
+
+        .section {
+            display: none;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+
+        .columns {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .column {
+            width: 30%;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 10px;
+            min-width: 250px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li::before {
+            content: '✔ ';
+            color: lightgreen;
+        }
+        .submenu {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.submenu button {
+    background-color: #444;
+    color: white;
+    padding: 8px 16px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.submenu button:hover {
+    background-color: #666;
+    color: lightgreen;
+}
+
+    </style>
+    
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <div class="menu">
+        <button onclick="showSection('home')">HOME</button>
+        <button onclick="showSection('goods')">GOODS</button>
+        <button onclick="showSection('kiswahili')">KISWAHILI</button>
+        <button onclick="showSection('help')">HELP</button>
+    </div>
+
+    <div id="home" class="section">
+        <div class="columns">
+            <div class="column">
+                <h2>Karibu Promise Land</h2>
+                <p>Tunatoa huduma mbalimbali za uchapishaji:</p>
+                <ul>
+                    <li>Kutengeneza kadi za utambulisho</li>
+                    <li>Cheti za taaluma na kazi</li>
+                    <li>Picha za passport</li>
+                    <li>Uuzaji wa vitabu vipya</li>
+                </ul>
+            </div>
+            <div class="column">
+                <h2>Huduma Zingine</h2>
+                <p>Tunauza bidhaa zifuatazo:</p>
+                <ul>
+                    <li>Kamusi (Kiswahili, Kiingereza)</li>
+                    <li>Biblia na vitabu vya dini</li>
+                    <li>Vifaa vya shule kwa ngazi zote</li>
+                </ul>
+            </div>
+            <div class="column">
+                <h2>Zaidi Kuhusu Sisi</h2>
+                <p>Tunajitahidi kutoa huduma bora zaidi kila siku.</p>
+                <ul>
+                    <li>Kuweka binding</li>
+                    <li>Photocopy ya nyaraka</li>
+                    <li>Lamination ya vyeti</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="goods" class="section">
+        <h2 style="text-align: center;">GOODS - Bidhaa Tunazouza</h2>
+        
+        <div class="submenu">
+            <button onclick="showGoods('office')">Office</button>
+            <button onclick="showGoods('schools')">Schools</button>
+            <button onclick="showGoods('home')">Home</button>
+            <button onclick="showGoods('others')">Others</button>
+        </div>
+    
+        <div id="goods-office" class="goods-category">
+            <h3>Office Products</h3>
+            <ul>
+                <li>Karatasi za printa</li>
+                <li>Faili na folders</li>
+                <li>Stamp pad na ink</li>
+            </ul>
+        </div>
+    
+        <div id="goods-schools" class="goods-category" style="display: none;">
+            <h3>School Products</h3>
+            <ul>
+                <li>Daftari, kalamu, penseli</li>
+                <li>Rula, compasses</li>
+                <li>Colours na paints</li>
+            </ul>
+        </div>
+    
+        <div id="goods-home" class="goods-category" style="display: none;">
+            <h3>Home Products</h3>
+            <ul>
+                <li>Vitabu vya hadithi</li>
+                <li>Vitabu vya kujifunza lugha</li>
+                <li>Kalenda na mapambo ya nyumba</li>
+            </ul>
+        </div>
+    
+        <div id="goods-others" class="goods-category" style="display: none;">
+            <h3>Other Products</h3>
+            <ul>
+                <li>Vifaa vya sanaa</li>
+                <li>Vifaa vya michezo</li>
+                <li>Zawadi na kadi za shukrani</li>
+            </ul>
+        </div>
+    </div>
+    
+    
+
+    <div id="kiswahili" class="section">
+        <h2 style="text-align: center;">KISWAHILI - Karibu!</h2>
+        <div class="columns">
+            <div class="column">
+                <p>Tunatoa vitabu vya Kiswahili kama:</p>
+                <ul>
+                    <li>Kamusi za Kiswahili</li>
+                    <li>Hadithi za watoto</li>
+                    <li>Vitabu vya mashairi</li>
+                </ul>
+            </div>
+            <div class="column">
+                <p>Huduma za Kiswahili:</p>
+                <ul>
+                    <li>Kutafsiri nyaraka</li>
+                    <li>Kuhariri maandiko</li>
+                    <li>Kutoa machapisho kwa Kiswahili</li>
+                </ul>
+            </div>
+            <div class="column">
+                <p>Elimu ya Kiswahili:</p>
+                <ul>
+                    <li>Kozi za Kiswahili</li>
+                    <li>Mafunzo ya uandishi bora</li>
+                    <li>Mwongozo wa fasihi</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="help" class="section">
+        <h2 style="text-align: center;">HELP - Msaada</h2>
+        <div class="columns">
+            <div class="column">
+                <p>Maswali yanayoulizwa mara kwa mara:</p>
+                <ul>
+                    <li>Huduma zenu ni zipi?</li>
+                    <li>Mnatoa punguzo kwa wateja wakubwa?</li>
+                    <li>Muda wa kazi ni upi?</li>
+                </ul>
+            </div>
+            <div class="column">
+                <p>Mawasiliano:</p>
+                <ul>
+                    <li>Simu: +255 XXX XXX XXX</li>
+                    <li>Email: info@promiseland.co.tz</li>
+                    <li>WhatsApp: +255 XXX XXX XXX</li>
+                </ul>
+            </div>
+            <div class="column">
+                <p>Maelezo zaidi:</p>
+                <ul>
+                    <li>Tafadhali tembelea duka letu</li>
+                    <li>Angalia ofa zetu maalum</li>
+                    <li>Ungana nasi mitandaoni</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(section) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(s => s.style.display = 'none');
+            document.getElementById(section).style.display = 'block';
+        }
+
+        // On load, show HOME
+        showSection('home');
+    </script>
+    <script>
+        function showGoods(category) {
+            const categories = document.querySelectorAll('.goods-category');
+            categories.forEach(c => c.style.display = 'none');
+            document.getElementById('goods-' + category).style.display = 'block';
+        }
+    </script>
+    
+</body>
+</html>
